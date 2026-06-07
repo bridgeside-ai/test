@@ -1,6 +1,10 @@
+# E2E Smoke Tests for bridgeside.ai marketing pages
 name: E2E Smoke Tests
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
     inputs:
       base_url:
