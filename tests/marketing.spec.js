@@ -16,7 +16,7 @@ test.describe('Marketing Pages', () => {
   test('Landing page has correct meta description', async ({ page }) => {
     await page.goto('/', { waitUntil: 'domcontentloaded' });
     const metaDesc = page.locator('meta[name="description"]');
-    await expect(metaDesc).toHaveAttribute('content', /.bridgeside/i);
+    await expect(metaDesc).toHaveAttribute('content', /bridgeside/i);
   });
 
   test('Landing page has correct title', async ({ page }) => {
