@@ -1,10 +1,12 @@
 name: E2E Smoke Tests
 
 on:
-  workflow_run:
-    workflow: Bridgeside Dynamic Environment Deployment
-    types: [completed]
-    branches: [test]
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: 'Frontend base URL (e.g. https://test.bridgeside.dev)'
+        required: false
+        default: 'https://test.bridgeside.dev'
 
 jobs:
   smoke-tests:
@@ -31,7 +33,7 @@ jobs:
       - name: Run Playwright smoke tests
         run: npm test -- --project=chromium
         env:
-          BASE_URL: https://test.bridgeside.dev
+          BASE_URL: ${{ github.event.inputs.base_url || 'https://test.bridgeside.dev' }}
 
       - name: Upload test results
         if: always()
