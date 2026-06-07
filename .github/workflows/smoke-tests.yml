@@ -2,7 +2,7 @@ name: E2E Smoke Tests
 
 on:
   workflow_run:
-    workflow: Terraform Apply
+    workflow: Bridgeside Dynamic Environment Deployment
     types: [completed]
     branches: [test]
 
