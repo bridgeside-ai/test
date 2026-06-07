@@ -1,4 +1,4 @@
-# bridgeside-smoke-tests
+# test
 
 E2E smoke tests for bridgeside.ai marketing pages and core flows.
 
